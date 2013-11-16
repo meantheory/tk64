@@ -8,6 +8,7 @@ from tk64 import BIN_ALPHABET
 from py.test import raises
 
 ABC_ALPHABET = 'abc'
+WRD_ALPHABET = '!@#$%^&*()_+-{}][<>.,?='
 TST_ALPHABET = string.ascii_uppercase + \
 	string.ascii_lowercase + \
 	string.digits + \
@@ -77,4 +78,17 @@ def test_hex_neg_error():
 	tk = Token(HEX_ALPHABET)
 	with raises(TokenError):
 		tk.encode(-9223372036854775809)
+
+def test_wrd_22():
+	tk = Token(WRD_ALPHABET)
+	assert tk.encode(22) == '='
+	assert tk.decode('=') == 22
+
+def test_wrd_23():
+	tk = Token(WRD_ALPHABET)
+	assert tk.encode(23) == '@!'
+	assert tk.decode('@!') == 23
+
+
+
 

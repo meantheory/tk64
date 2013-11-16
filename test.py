@@ -1,8 +1,11 @@
 import string
 
 from tk64 import Token
+from tk64 import TokenError
 from tk64 import HEX_ALPHABET
 from tk64 import BIN_ALPHABET
+
+from py.test import raises
 
 ABC_ALPHABET = 'abc'
 TST_ALPHABET = string.ascii_uppercase + \
@@ -64,3 +67,14 @@ def test_tst_64():
 	tk = Token(TST_ALPHABET)
 	assert tk.encode(64) == 'BA'
 	assert tk.decode('BA') == 64
+
+def test_hex_pos_error():
+	tk = Token(HEX_ALPHABET)
+	with raises(TokenError):
+		tk.encode(9223372036854775808)
+
+def test_hex_neg_error():
+	tk = Token(HEX_ALPHABET)
+	with raises(TokenError):
+		tk.encode(-9223372036854775809)
+

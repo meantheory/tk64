@@ -89,6 +89,9 @@ def test_wrd_23():
 	assert tk.encode(23) == '@!'
 	assert tk.decode('@!') == 23
 
-
+def test_empty_str():
+	tk = Token(HEX_ALPHABET)
+	with raises(TokenError):
+		tk.encode('')
 
 

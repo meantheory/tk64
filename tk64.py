@@ -42,6 +42,9 @@ class Token(object):
 		NLEN = len(n) - 1
 		d = 0
 
+		if n == '':
+			raise TokenError('Empty strings are forbidden')
+
 		for i, x in enumerate(n):
 
 			pos = self.alphabet.index(x)

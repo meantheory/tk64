@@ -94,4 +94,9 @@ def test_empty_str():
 	with raises(TokenError):
 		tk.encode('')
 
+def test_bad_alpha():
+	tk = Token(ABC_ALPHABET)
+	with raises(TokenError):
+		tk.decode('bcd')
+
 

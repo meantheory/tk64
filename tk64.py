@@ -4,7 +4,13 @@ HEX_ALPHABET = '0123456789ABCDEF'
 BIN_ALPHABET = '01'
 
 class TokenError(Exception):
-	pass
+	
+	def __init__(self, msg):
+
+		self.message = msg
+
+	def __str__(self):
+		return repr(self.message)
 
 class Token(object):
 
@@ -47,7 +53,10 @@ class Token(object):
 
 		for i, x in enumerate(n):
 
-			pos = self.alphabet.index(x)
+			try:
+				pos = self.alphabet.index(x)
+			except ValueError:
+				raise TokenError('Token contains invalid char for this alphabet')
 			num = pos * pow(self.len, NLEN - i)
 			d += num
 

@@ -102,7 +102,9 @@ def test_bad_alpha():
 def test_zero():
 	tk = Token(HEX_ALPHABET)
 	assert tk.encode(0) == '0'
+	assert tk.decode('0') == 0
 
 	tk = Token(ABC_ALPHABET)
 	assert tk.encode(0) == 'a'
+	assert tk.decode('a') == 0
 

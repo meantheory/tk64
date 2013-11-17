@@ -1,8 +1,5 @@
 
 
-HEX_ALPHABET = '0123456789ABCDEF'
-BIN_ALPHABET = '01'
-
 class TokenError(Exception):
 	
 	def __init__(self, msg):

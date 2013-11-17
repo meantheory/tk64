@@ -2,11 +2,11 @@ import string
 
 from tk64 import Token
 from tk64 import TokenError
-from tk64 import HEX_ALPHABET
-from tk64 import BIN_ALPHABET
 
 from py.test import raises
 
+HEX_ALPHABET = '0123456789ABCDEF'
+BIN_ALPHABET = '01'
 ABC_ALPHABET = 'abc'
 WRD_ALPHABET = '!@#$%^&*()_+-{}][<>.,?='
 TST_ALPHABET = string.ascii_uppercase + \

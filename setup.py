@@ -8,4 +8,5 @@ setup(name='tk64',
       author='Jeremiah Campbell',
       author_email='jeremiah.campbell@gmail.com',
       url='https://github.com/meantheory/tk64',
+      py_modules=['tk64',],
      )

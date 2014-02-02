@@ -8,7 +8,8 @@ setup(name='tk64',
       author='Jeremiah Campbell',
       author_email='jeremy@meantheory.com',
       url='https://github.com/meantheory/tk64',
-      download_url='https://github.com/meantheory/tk64/tarball/0.1'
+      download_url='https://github.com/meantheory/tk64/tarball/0.1',
+      license='MIT',
       py_modules=['tk64',],
       classifiers=[
         'Programming Language :: Python :: 2.7',
